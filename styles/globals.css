@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(to bottom, black, rgb(26, 26, 26));
+  height: 100vh;
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.auth_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.heading {
+  background-image: linear-gradient(to right, #00e1ff, #00ff37);
+  background-clip: text;
+  color: transparent;
+  font-family: "Poppins";
+  font-size: 2rem;
+}
+
+.profile_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile_heading_container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background: linear-gradient(to bottom, rgb(2, 15, 39), black);
+  border-top: 1px dashed rgba(0, 217, 255, 0.479);
+  border-bottom: 1px dashed rgba(0, 217, 255, 0.479);
+  padding: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.profile_heading {
+  color: white;
+  font-family: "Poppins";
+  text-align: center;
+}
+
+.nanoscape {
+  background-image: linear-gradient(to right, #00c3ff, #0011ff);
+  background-clip: text;
+  color: transparent;
+  font-family: "Orbitron";
+  text-align: center;
+  font-size: 2rem;
+}
+
+.profile_data_container {
+  display: flex;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.error {
+  margin-top: 3rem;
+}
+
+.profile_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.profile_data_text {
+  color: rgb(236, 236, 236);
+  font-family: "Montserrat";
+}
+
+.profile_data_error {
+  color: rgb(236, 236, 236);
+  font-family: "Montserrat";
+  font-size: 3rem;
+  text-align: center;
+}
+
+.profile_image_container {
+  margin-right: 2rem;
+}
+
+.description {
+  color: white;
+  font-family: "Inter";
+  margin: 1rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(128, 128, 128, 0.342);
+}
+
+.auth_guard {
+  color: #57ff51;
+}
+
+.nav_container {
+  width: 100vw;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 5rem;
+}
+
+.navlogo_link {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo_text {
+  color: rgb(228, 228, 228);
+  font-family: "Poppins";
+}
+
+.nav_buttons_lg_container {
+  display: flex;
+  align-items: center;
+}
+
+.nav_buttons_sm_container {
+  display: none;
+}
+
+.nav_buttons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav_buttons_sm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav_button {
+  cursor: pointer;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 15px;
+  font-family: "Inter";
+  width: 7.5rem;
+  height: 2rem;
+}
+
+.outline_button {
+  color: rgb(233, 233, 233);
+  background: none;
+}
+
+.go_back_button {
+  color: rgb(233, 233, 233);
+  padding: 0.4rem 2rem;
+  border: 1px solid rgb(216, 216, 216);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-family: "Inter";
+  text-decoration: none;
+}
+
+.profile_img {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile_img Image {
+  object-fit: contain;
+}
+
+.white_button {
+  color: black;
+  background-color: white;
+  font-weight: 500;
+}
+
+.white_button:hover {
+  background-color: rgb(235, 235, 235);
+}
+
+.outline_button:hover, .go_back_button:hover {
+  background-color: rgba(75, 75, 75, 0.486);
+}
+
+.dropdown_remover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: none;
+  border: none;
+  outline: none;
+  width: 100vw;
+}
+
+.dropdown {
+  position: absolute;
+  top: 4.1rem;
+  right: 5vw;
+  gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(65, 65, 65, 0.404);
+  border: 1px solid #4d4d4d73;
+  padding: 0.5rem 0.8rem;
+  border-radius: 3px;
+  width: 28vw;
+  max-width: 10rem;
+}
+
+.dropdown_link {
+  width: 100%;
+  text-decoration: none;
+  font-family: "Inter";
+  font-size: 0.9rem;
+  color: rgb(243, 243, 243);
+  padding: 0.1rem;
+}
+
+.dropdown_link:hover {
+  color: rgb(159, 211, 231)
+}
+
+@media (max-width: 1000px) {
+  .nav_buttons {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .nav_buttons_lg_container {
+    display: none;
+  }
+
+  .nav_buttons_sm_container {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav_buttons {
+    gap: 0;
+  }
+
+  .logo_text {
+    display: none;
+  }
+}
