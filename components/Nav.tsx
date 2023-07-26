@@ -24,7 +24,7 @@ const Nav = () => {
   return (
     <nav className="nav_container">
         <Link href="/" className="navlogo_link">
-            <Image src="/../public/logo.png" alt="AuthX Logo" width={32} height={32} className='object_contain'></Image>
+            <Image src="/images/logo.png" alt="AuthX Logo" width={32} height={32} className='object_contain'></Image>
             <p className="logo_text">AuthX</p>
         </Link>
 
