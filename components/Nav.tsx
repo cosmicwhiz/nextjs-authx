@@ -8,7 +8,7 @@ import Dropdown from "./Dropdown";
 
 
 const Nav = () => {
-  const { data: session } = useSession()
+  const { data: session, status } = useSession()
 
   const [providers, setProviders] = useState<any>(null);
   const [toggleDropdown, setToggleDropdown] = useState<boolean>(false);
@@ -31,6 +31,15 @@ const Nav = () => {
         {/* Desktop Navigation */}
         <div className="nav_buttons_lg_container">
             {
+                status === 'loading' ? 
+                <>
+                    <div className="nav_buttons">
+                        <div className="nav_signin_loading"></div>
+                    </div>
+                </> 
+                : 
+                <>
+                {
                 session?.user ? (
                     <div className="nav_buttons">
                         <button type="button" className="nav_button outline_button" onClick={() => signOut()}>
@@ -53,37 +62,49 @@ const Nav = () => {
                     }
                     </>
                 ) 
+            }</>
             }
         </div>
 
         {/* Mobile Navigation */}
         <div className="nav_buttons_sm_container">
             {
-                session?.user ? (
+                status === 'loading' ? 
+                <>
                     <div className="nav_buttons_sm">
-                        <div className="profile_img">
-                            <Image src={session?.user.image || ""} alt="Profile Picture" width={37} height={37}
-                            onClick={() => setToggleDropdown((prev) => !prev)}></Image>
-                        </div>
-
-                        {
-                            toggleDropdown && (    
-                                <Dropdown setToggleDropdown={setToggleDropdown} signOut={signOut}></Dropdown>
-                            )
-                        }
+                        <div className="nav_signin_loading"></div>
                     </div>
-                ) : (
-                    <>
+                </> 
+                :
+                <>
                     {
-                        providers && Object.values(providers).map((provider: any) => (
-                            <button type="button" key={provider.name} 
-                            onClick={() => signIn(provider.id)} className="nav_button white_button">
-                                Sign In
-                            </button>
-                        ))
+                        session?.user ? (
+                            <div className="nav_buttons_sm">
+                                <div className="profile_img">
+                                    <Image src={session?.user.image || ""} alt="Profile Picture" width={37} height={37}
+                                    onClick={() => setToggleDropdown((prev) => !prev)}></Image>
+                                </div>
+
+                                {
+                                    toggleDropdown && (    
+                                        <Dropdown setToggleDropdown={setToggleDropdown} signOut={signOut}></Dropdown>
+                                    )
+                                }
+                            </div>
+                        ) : (
+                            <>
+                            {
+                                providers && Object.values(providers).map((provider: any) => (
+                                    <button type="button" key={provider.name} 
+                                    onClick={() => signIn(provider.id)} className="nav_button white_button">
+                                        Sign In
+                                    </button>
+                                ))
+                            }
+                            </>
+                        )
                     }
-                    </>
-                )
+                </>
             }
         </div>
     </nav>
