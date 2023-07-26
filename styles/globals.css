@@ -28,7 +28,7 @@ body {
   background-image: linear-gradient(to right, #00e1ff, #00ff37);
   background-clip: text;
   color: transparent;
-  font-family: "Poppins";
+  font-family: var(--font-poppins);
   font-size: 2rem;
 }
 
@@ -82,7 +82,7 @@ body {
 
 .profile_heading {
   color: white;
-  font-family: "Poppins";
+  font-family: var(--font-poppins);
   text-align: center;
 }
 
@@ -90,7 +90,7 @@ body {
   background-image: linear-gradient(to right, #00c3ff, #0011ff);
   background-clip: text;
   color: transparent;
-  font-family: "Orbitron";
+  font-family: var(--font-orbitron);
   text-align: center;
   font-size: 2rem;
 }
@@ -117,12 +117,12 @@ body {
 
 .profile_data_text {
   color: rgb(236, 236, 236);
-  font-family: "Montserrat";
+  font-family: var(--font-montserrat);
 }
 
 .profile_data_error {
   color: rgb(236, 236, 236);
-  font-family: "Montserrat";
+  font-family: var(--font-montserrat);
   font-size: 3rem;
   text-align: center;
 }
@@ -133,7 +133,7 @@ body {
 
 .description {
   color: white;
-  font-family: "Inter";
+  font-family: var(--font-inter);
   margin: 1rem 0;
   padding: 1rem;
   border: 1px solid rgba(128, 128, 128, 0.342);
@@ -161,7 +161,7 @@ body {
 
 .logo_text {
   color: rgb(228, 228, 228);
-  font-family: "Poppins";
+  font-family: var(--font-poppins);
 }
 
 .nav_buttons_lg_container {
@@ -189,7 +189,7 @@ body {
   cursor: pointer;
   border: 1px solid rgb(216, 216, 216);
   border-radius: 15px;
-  font-family: "Inter";
+  font-family: var(--font-inter);
   width: 7.5rem;
   height: 2rem;
 }
@@ -208,7 +208,7 @@ body {
   border: 1px solid rgb(216, 216, 216);
   border-radius: 20px;
   font-size: 0.9rem;
-  font-family: "Inter";
+  font-family: var(--font-inter);
   text-decoration: none;
 }
 
@@ -270,7 +270,7 @@ body {
 .dropdown_link {
   width: 100%;
   text-decoration: none;
-  font-family: "Inter";
+  font-family: var(--font-inter);
   font-size: 0.9rem;
   color: rgb(235, 235, 235);
   padding: 0.15rem;
