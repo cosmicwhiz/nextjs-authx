@@ -46,7 +46,7 @@ const Nav = () => {
                             Sign Out
                         </button>
 
-                        <Link href="/profile" className="profile_img">
+                        <Link href="/profile" className="nav_profile_img">
                             <Image src={session?.user.image || ""} alt="Profile Picture" width={37} height={37}></Image>
                         </Link>
                     </div>
@@ -80,7 +80,7 @@ const Nav = () => {
                     {
                         session?.user ? (
                             <div className="nav_buttons_sm">
-                                <div className="profile_img">
+                                <div className="nav_profile_img">
                                     <Image src={session?.user.image || ""} alt="Profile Picture" width={37} height={37}
                                     onClick={() => setToggleDropdown((prev) => !prev)}></Image>
                                 </div>

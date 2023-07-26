@@ -29,7 +29,7 @@ const Profile = () => {
           
                   <div className="profile_image_container">
                     <div className="profile_img">
-                      <Image src={session?.user.image || ""} alt="Dashboard Profile Image" width={100} height={100}></Image>
+                      <Image src={session?.user.image || ""} alt="Dashboard Profile Image" fill></Image>
                     </div>
                   </div>
                   <div className="profile_data">
