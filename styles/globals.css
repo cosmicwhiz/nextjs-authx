@@ -118,6 +118,7 @@ body {
 .profile_data_text {
   color: rgb(236, 236, 236);
   font-family: var(--font-montserrat);
+  font-weight: 300;
 }
 
 .profile_data_error {

@@ -8,10 +8,12 @@ import Dropdown from "./Dropdown";
 
 
 const Nav = () => {
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
+  const loadTime = 500;
 
   const [providers, setProviders] = useState<any>(null);
   const [toggleDropdown, setToggleDropdown] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchProviders = async () => {
@@ -19,6 +21,9 @@ const Nav = () => {
         setProviders(response);
     }
     fetchProviders();
+    setTimeout(() => {
+        setIsLoading(false)
+    }, loadTime);
   }, [])
 
   return (
@@ -31,7 +36,7 @@ const Nav = () => {
         {/* Desktop Navigation */}
         <div className="nav_buttons_lg_container">
             {
-                status === 'loading' ? 
+                isLoading ? 
                 <>
                     <div className="nav_buttons">
                         <div className="nav_signin_loading"></div>
@@ -69,7 +74,7 @@ const Nav = () => {
         {/* Mobile Navigation */}
         <div className="nav_buttons_sm_container">
             {
-                status === 'loading' ? 
+                isLoading ? 
                 <>
                     <div className="nav_buttons_sm">
                         <div className="nav_signin_loading"></div>

@@ -3,14 +3,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import { useState, useEffect } from "react";
 
 const Profile = () => {
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
+  const loadTime = 500;
+
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false)
+    }, loadTime);
+  }, [])
 
   return (
     <section className="profile_page">
       {
-        status === 'loading' ? 
+        isLoading ? 
         <div className="loading_container">
           <div className="profile_heading_loading"></div>
           <div className="profile_data_loading"></div>
