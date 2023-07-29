@@ -47,18 +47,26 @@ const Profile = () => {
                     <p className="profile_data_text">{session?.user.email}</p>
                   </div>
                 </div>
-
-                <Link href="/" className="go_back_button">Go Back</Link>
               </>
             ) : (
-              <>
-                <div className="profile_image_container error">
+                <div className="profile_error_container">
                   <p className="profile_data_error">Oops!</p>
-                  <p className="description"><span className="auth_guard">Auth Guardian</span>: Sign In to view your profile!</p>
+                  <div className="chat_desc">
+                    <div className="character_chat">
+                      <span className="character auth_guard">Auth Guardian</span>
+                      <span>:&nbsp;&nbsp;</span>
+                      <span>Nothing to show here!</span>
+                    </div>
+                    <div className="character_chat">
+                      <span className="character coordinator">Coordinator</span>
+                      <span>:&nbsp;&nbsp;</span>
+                      <span>It seems that you haven&apos;t signed in</span>
+                    </div>
                 </div>
-              </>
+              </div>
             )
           }
+          <Link href="/" className="go_back_button">Go Back</Link>
         </>
       }
           
